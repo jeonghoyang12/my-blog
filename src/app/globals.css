@@ -6,6 +6,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --font-geist-sans: 'Inter', sans-serif;
+  --font-geist-mono: 'Courier New', monospace;
 }
 
 @media (prefers-color-scheme: dark) {
