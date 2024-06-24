@@ -16,7 +16,7 @@ export default function RootLayout({
 export const metadata: Metadata = {
   title: {
     template: '%s | DKRM Studio',
-    default: 'DKRM Studio',
+    default: 'My blog',
   },
-  description: 'Light shines brighter in the dark.',
+  description: 'This is the blog powered by Next.js and Notion.',
 }
