@@ -1,3 +1,4 @@
+import { Post } from '@/components/post'
 import { fetchPageBlocks, fetchPageBySlug, notion } from '@/lib/notion'
 import bookmarkPlugin from '@notion-render/bookmark-plugin'
 import { NotionRenderer } from '@notion-render/client'
@@ -21,5 +22,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const html = await renderer.render(...blocks)
 
-  return <div dangerouslySetInnerHTML={{ __html: html }}></div>
+  return (
+    <Post
+      title={(post.properties.Title as any).title[0].plain_text}
+      date={(post.properties.Updated as any).last_edited_time}
+      content={html}
+    />
+  )
 }
