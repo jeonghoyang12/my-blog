@@ -10,6 +10,10 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@notion-render/bookmark-plugin": "^0.0.2",
+    "@notion-render/client": "^0.0.2",
+    "@notion-render/hljs-plugin": "^0.0.2",
+    "@notionhq/client": "^2.2.15",
     "next": "^14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
