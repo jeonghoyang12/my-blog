@@ -29,3 +29,8 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+pre code.language-javascript, code.language-javascript {
+  background-color: #2d2d2d !important; /* Ensure dark background */
+  color: #f8f8f2 !important; /* Ensure light text color */
+}
