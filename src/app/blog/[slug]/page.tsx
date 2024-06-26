@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Post } from '@/components/post'
 import { fetchPageBlocks, fetchPageBySlug, notion } from '@/lib/notion'
 import bookmarkPlugin from '@notion-render/bookmark-plugin'
