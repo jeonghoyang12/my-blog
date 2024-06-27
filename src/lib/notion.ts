@@ -14,6 +14,9 @@ if (!process.env.NOTION_API_KEY || !process.env.NOTION_DATABASE_ID) {
   )
 }
 
+console.log('NOTION_API_KEY:', process.env.NOTION_API_KEY)
+console.log('NOTION_DATABASE_ID:', process.env.NOTION_DATABASE_ID)
+
 export const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 })
