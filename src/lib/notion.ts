@@ -1,6 +1,3 @@
-// This line make sure that the file never get imported by the client to avoid leaking your Notion Token.
-import 'server-only'
-
 import { Client } from '@notionhq/client'
 import React from 'react'
 import type {
