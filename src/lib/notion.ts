@@ -5,6 +5,15 @@ import type {
   PageObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints'
 
+if (!process.env.NOTION_API_KEY || !process.env.NOTION_DATABASE_ID) {
+  console.error(
+    'Missing required environment variables NOTION_API_KEY or NOTION_DATABASE_ID'
+  )
+  throw new Error(
+    'Missing required environment variables NOTION_API_KEY or NOTION_DATABASE_ID'
+  )
+}
+
 export const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 })
