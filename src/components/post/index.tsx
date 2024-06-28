@@ -1,5 +1,6 @@
 import { formatDate } from '@/utils/date'
 import Tag from '@/components/tag'
+import PrismLoader from '@/components/prism-loader'
 
 interface PostProps {
   title: string
@@ -30,6 +31,7 @@ export function Post(props: PostProps) {
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>
+      <PrismLoader />
     </article>
   )
 }
