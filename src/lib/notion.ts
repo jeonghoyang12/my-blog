@@ -17,15 +17,6 @@ if (
   )
 }
 
-console.log(
-  'NEXT_PUBLIC_NOTION_API_KEY:',
-  process.env.NEXT_PUBLIC_NOTION_API_KEY
-)
-console.log(
-  'NEXT_PUBLIC_NOTION_DATABASE_ID:',
-  process.env.NEXT_PUBLIC_NOTION_DATABASE_ID
-)
-
 export const notion = new Client({
   auth: process.env.NEXT_PUBLIC_NOTION_API_KEY,
 })
