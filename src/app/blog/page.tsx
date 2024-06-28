@@ -3,6 +3,7 @@ import { fetchPages } from '@/lib/notion'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { formatDate } from '@/utils/date'
+import Tag from '@/components/tag'
 
 export default async function Blog() {
   const { results } = await fetchPages()
@@ -11,7 +12,9 @@ export default async function Blog() {
   }
 
   console.log(
-    results.map((post: any) => post.properties.Updated.last_edited_time)
+    results.map((post: any) =>
+      post.properties.Tags.multi_select.map((tag: any) => tag.name)
+    )
   )
 
   return (
@@ -35,6 +38,13 @@ export default async function Blog() {
                 <p className="text-gray-500">
                   {formatDate(post.properties.Updated.last_edited_time)}
                 </p>
+                <div className="mt-2 flex">
+                  {post.properties.Tags.multi_select.map(
+                    (tag: any, index: number) => (
+                      <Tag key={index} label={tag.name} />
+                    )
+                  )}
+                </div>
               </a>
             </Link>
           ))}
