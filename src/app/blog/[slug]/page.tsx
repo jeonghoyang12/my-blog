@@ -23,10 +23,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const html = await renderer.render(...blocks)
 
+  // console.log((post.properties.Tags as any)?.multi_select?.map((tag: any) => tag.name))
+
   return (
     <Post
       title={(post.properties.Title as any).title[0].plain_text}
       date={(post.properties.Updated as any).last_edited_time}
+      tags={(post.properties.Tags as any)?.multi_select?.map(
+        (tag: any) => tag.name
+      )}
       content={html}
     />
   )
