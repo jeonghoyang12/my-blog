@@ -47,6 +47,20 @@ export const fetchPageBySlug = React.cache((slug: string) => {
     .then((res) => res.results[0] as PageObjectResponse | undefined)
 })
 
+export const fetchByTags = React.cache((tag: string) => {
+  return notion.databases
+    .query({
+      database_id: process.env.NEXT_PUBLIC_NOTION_DATABASE_ID ?? '',
+      filter: {
+        property: 'Tags',
+        multi_select: {
+          contains: tag,
+        },
+      },
+    })
+    .then((res) => res.results as PageObjectResponse[])
+})
+
 export const fetchPageBlocks = React.cache((pageId: string) => {
   return notion.blocks.children
     .list({ block_id: pageId })
